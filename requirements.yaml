@@ -1,0 +1,5 @@
+PyGithub>=2.3
+PyYAML>=6
+python-telegram-bot[job-queue]>=21
+python-dotenv>=1
+pytest>=8
