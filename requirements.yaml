@@ -1,5 +1,33 @@
-PyGithub>=2.3
-PyYAML>=6
-python-telegram-bot[job-queue]>=21
-python-dotenv>=1
-pytest>=8
+requirements:
+  - id: R1
+    title: Login
+    owner: member-1
+    check:
+      - file_exists: app/login.py
+      - tests_pass: tests/test_login.py
+  - id: R2
+    title: Search
+    owner: member-2
+    check:
+      - file_exists: app/search.py
+      - tests_pass: tests/test_search.py
+  - id: R3
+    title: Borrowing
+    owner: member-3
+    check:
+      - file_exists: app/borrow.py
+      - tests_pass: tests/test_borrow.py
+  - id: R4
+    title: Unit tests
+    owner: member-1
+    check:
+      - file_exists: tests/test_login.py
+      - file_exists: tests/test_search.py
+      - file_exists: tests/test_borrow.py
+  - id: R5
+    title: Report
+    owner: member-2
+    check:
+      - sections_present:
+          file: docs/report.md
+          sections: [Intro, Design, Testing]
